@@ -1,0 +1,35 @@
+RNN
+----
+
+- We cannot process sequential data using a fully connected layer directly, as it treats each word independently without considering the order or relationships between words.
+ This results in a lack of understanding and meaning. To address this limitation, Recurrent Neural Networks (RNNs) were introduced to handle sequential data effectively.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- RNNs are built on the principle of weight sharing, allowing the same weights to be applied at each time step.
+
+-The core output of an RNN is its hidden state, which serves as a summary of all previous information. The main purpose of an RNN is to capture dependencies across a sequence. At each step, it takes two inputs: The previous hidden state and The current input.
+
+-This mechanism enables the network to be unrolled over time, allowing information to be shared across time steps and making it well-suited for sequential data.
+
+-The hidden state acts as a memory, encoding the information from previous steps and enabling the model to maintain context across the sequence.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Steps to Implement an RNN:
+
+ 1- Tokenize the text into individual tokens (words or subwords).
+
+ 2- Map each token to a unique ID from a vocabulary.
+
+ 3- Convert each ID into a dense vector (embedding).
+
+ 4- During training, SGD is used to learn and refine these vectors.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Limitations with RNN:
+
+- Vanishing Gradient Problem: As gradients are propagated backward through time, they can become very small (close to zero) this led to The model forgets important information from earlier in the sequence.
+
+- Exploding Gradient Problem:In some cases, gradients grow very large during backpropagation.
+  
